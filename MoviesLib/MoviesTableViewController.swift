@@ -8,11 +8,13 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 class MoviesTableViewController: UITableViewController {
 
     var fetchedResultController: NSFetchedResultsController<Movie>!
     var label: UILabel!
+    var backgroundMusicPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +33,23 @@ class MoviesTableViewController: UITableViewController {
         label.textColor = .white
         
         loadMovies()
+        prepareMusic()
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        backgroundMusicPlayer.play()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        backgroundMusicPlayer.stop()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,6 +59,15 @@ class MoviesTableViewController: UITableViewController {
     }
     
     // MAKK: - Methods
+    func prepareMusic() {
+        let url = Bundle.main.url(forResource: "music", withExtension: "mp3")!
+        backgroundMusicPlayer = try! AVAudioPlayer(contentsOf: url)
+        backgroundMusicPlayer.volume = 0.2
+        backgroundMusicPlayer.numberOfLoops = -1
+        backgroundMusicPlayer.play()
+    }
+    
+    
     func loadMovies() {
         
         let fetchRequest: NSFetchRequest<Movie> = Movie.fetchRequest()

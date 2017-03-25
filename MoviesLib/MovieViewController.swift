@@ -32,6 +32,16 @@ class MovieViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareVideo()
+        if UserDefaults.standard.bool(forKey: SettingsType.autoPlay.rawValue) {
+            changeMovieStatus(play: true)
+        } else {
+            let oldHeight = ivPoster.frame.size.height
+            ivPoster.frame.size.height = 0
+            UIView.animate(withDuration: 0.75, delay: 0, options: .curveEaseIn, animations: { 
+                self.ivPoster.frame.size.height = oldHeight
+            }, completion: nil)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +58,10 @@ class MovieViewController: UIViewController {
         }
         tvSinopsis.text = movie.summary
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        changeMovieStatus(play: false)
+    }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         dismiss(animated: true, completion: nil)
@@ -60,7 +74,8 @@ class MovieViewController: UIViewController {
     }
     
     func prepareVideo() {
-        let url = Bundle.main.url(forResource: "logan-trailler", withExtension: "mp4")!
+        //let url = Bundle.main.url(forResource: "logan-trailler", withExtension: "mp4")!
+        let url = URL(string: "http://goo.gl/8XmNn8")!
         moviePlayer = AVPlayer(url: url)
         moviePlayerController = AVPlayerViewController()
         moviePlayerController.player = moviePlayer
@@ -70,10 +85,21 @@ class MovieViewController: UIViewController {
     }
     
     @IBAction func playVideo(_ sender: UIButton) {
-        
+        sender.isHidden = true
+        changeMovieStatus(play: true)
     }
     
+    func changeMovieStatus(play: Bool) {
+        vwTrailer.isHidden = false
+        if play {
+            moviePlayer.play()
+        } else {
+            moviePlayer.pause()
+        }
+    }
     
-    
+    deinit {
+        print("Morreu")
+    }
     
 }

@@ -16,6 +16,8 @@
 		AC264C1B1E7CA30200F083F1 /* MoviesLib.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC264C191E7CA30200F083F1 /* MoviesLib.xcdatamodeld */; };
 		AC264C1D1E7CABAE00F083F1 /* UIViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC264C1C1E7CABAD00F083F1 /* UIViewController+CoreData.swift */; };
 		AC264C1F1E7CBEB300F083F1 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC264C1E1E7CBEB300F083F1 /* CategoriesViewController.swift */; };
+		AC276F321E85ECD4004316A3 /* logan-trailer.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AC276F301E85ECD4004316A3 /* logan-trailer.mp4 */; };
+		AC276F331E85ECD4004316A3 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AC276F311E85ECD4004316A3 /* music.mp3 */; };
 		AC64CE811E70BCAA00FD5EFF /* MoviesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC64CE801E70BCAA00FD5EFF /* MoviesTableViewController.swift */; };
 		AC64CE831E70C8C600FD5EFF /* movies.json in Resources */ = {isa = PBXBuildFile; fileRef = AC64CE821E70C8C600FD5EFF /* movies.json */; };
 		AC64CED51E70C98E00FD5EFF /* arrival-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AC64CEBB1E70C98E00FD5EFF /* arrival-small.jpg */; };
@@ -68,6 +70,8 @@
 		AC264C1A1E7CA30200F083F1 /* MoviesLib.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoviesLib.xcdatamodel; sourceTree = "<group>"; };
 		AC264C1C1E7CABAD00F083F1 /* UIViewController+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreData.swift"; sourceTree = "<group>"; };
 		AC264C1E1E7CBEB300F083F1 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		AC276F301E85ECD4004316A3 /* logan-trailer.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "logan-trailer.mp4"; sourceTree = "<group>"; };
+		AC276F311E85ECD4004316A3 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		AC64CE801E70BCAA00FD5EFF /* MoviesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesTableViewController.swift; sourceTree = "<group>"; };
 		AC64CE821E70C8C600FD5EFF /* movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movies.json; sourceTree = "<group>"; };
 		AC64CEBB1E70C98E00FD5EFF /* arrival-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "arrival-small.jpg"; sourceTree = "<group>"; };
@@ -216,6 +220,8 @@
 		AC70C4F41E74236C005E598A /* data */ = {
 			isa = PBXGroup;
 			children = (
+				AC276F301E85ECD4004316A3 /* logan-trailer.mp4 */,
+				AC276F311E85ECD4004316A3 /* music.mp3 */,
 				AC64CE821E70C8C600FD5EFF /* movies.json */,
 				AC70C4EE1E741D3A005E598A /* theaters.xml */,
 			);
@@ -256,6 +262,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = KRXY7Q4555;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -287,6 +298,7 @@
 				07780D571E6D860E00BC3630 /* LaunchScreen.storyboard in Resources */,
 				AC64CEE21E70C98E00FD5EFF /* kongskull-wide.jpg in Resources */,
 				AC64CEDB1E70C98E00FD5EFF /* civilwar-small.jpg in Resources */,
+				AC276F331E85ECD4004316A3 /* music.mp3 in Resources */,
 				AC70C4FC1E747752005E598A /* fiap.gpx in Resources */,
 				AC64CEE81E70C98E00FD5EFF /* madmax-wide.jpg in Resources */,
 				AC64CEE71E70C98E00FD5EFF /* madmax-small.jpg in Resources */,
@@ -301,6 +313,7 @@
 				AC64CE831E70C8C600FD5EFF /* movies.json in Resources */,
 				AC64CEDA1E70C98E00FD5EFF /* batmanvsuperman-wide.jpg in Resources */,
 				AC64CEE91E70C98E00FD5EFF /* rogueone-small.jpg in Resources */,
+				AC276F321E85ECD4004316A3 /* logan-trailer.mp4 in Resources */,
 				AC64CEDC1E70C98E00FD5EFF /* civilwar-wide.jpg in Resources */,
 				AC64CEE01E70C98E00FD5EFF /* doctorstrange-wide.jpg in Resources */,
 				AC70C4EF1E741D3A005E598A /* theaters.xml in Resources */,
