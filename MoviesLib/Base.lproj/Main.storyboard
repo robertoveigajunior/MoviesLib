@@ -149,6 +149,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Matrix_Code_Green_Rain_Wallpaper_by_Steel_Ghost-2" translatesAutoresizingMaskIntoConstraints="NO" id="gxR-fM-Ovc">
+                                <rect key="frame" x="-233" y="-172" width="787" height="863"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="91L-d3-3i3">
                                 <rect key="frame" x="16" y="57" width="288" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -157,6 +161,7 @@
                                     <segment title="Dark"/>
                                     <segment title="Blue"/>
                                 </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="changeColor:" destination="4IL-X6-LKh" eventType="valueChanged" id="AaQ-DQ-da6"/>
                                 </connections>
@@ -165,7 +170,7 @@
                                 <rect key="frame" x="16" y="113" width="236" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hns-pr-xW1">
@@ -182,13 +187,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escolha a comida" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7LH-ra-NUi">
+                                <rect key="frame" x="16" y="176" width="159" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ajustes" image="settings" id="ahP-p1-4nU"/>
                     <connections>
+                        <outlet property="ivBG" destination="gxR-fM-Ovc" id="caX-JH-pYm"/>
                         <outlet property="scColorScheme" destination="91L-d3-3i3" id="zSX-Ih-1kw"/>
                         <outlet property="swAutoPlay" destination="Hns-pr-xW1" id="awM-OO-91J"/>
+                        <outlet property="tfFood" destination="7LH-ra-NUi" id="MXR-HN-aFc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJx-iw-Qc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -658,6 +672,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Matrix_Code_Green_Rain_Wallpaper_by_Steel_Ghost-2" width="1920" height="1080"/>
         <image name="gradient" width="320" height="66"/>
         <image name="moviePoster" width="326" height="184"/>
         <image name="movies" width="22" height="22"/>
